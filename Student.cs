@@ -13,7 +13,7 @@ namespace CreatingClasses2
         private int age;
         private string university;
         private string major;
-        private float gpa;
+        private double gpa;
         
         //Properties
         public string name
@@ -39,7 +39,7 @@ namespace CreatingClasses2
             set;
         }
 
-        public float GPA 
+        public double GPA 
             {
                 get { return this.gpa; }
                 set { this.gpa = value; }
@@ -51,14 +51,35 @@ namespace CreatingClasses2
            
         }
 
-        public Student(string fullName, int age, string university, string major, float gpa)
-            
+        public Student(string fullName, int age, string university, string major, double gpa)
+
         {
             this.fullName = fullName;
             this.age = age;
             this.university = university;
-            this.major = major;
+            this.Major = major;
             this.gpa = gpa;
+        }
+      //Methods
+      public void PrintAllDetails()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(fullName);
+            sb.Append(", ");
+            sb.Append(age);
+            sb.Append(", ");
+            sb.Append(university);
+            sb.Append(", ");
+            sb.Append(Major);
+            sb.Append(",");
+            sb.Append(gpa);
+
+            Console.WriteLine(sb.ToString()); 
+        }
+
+     public void Birthday()
+        {
+            age++;
         }
     }
 }
